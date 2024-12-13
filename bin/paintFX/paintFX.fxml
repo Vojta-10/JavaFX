@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="paintFX.AppController" style="-fx-background-color: lightgrey;">
+
+    <HBox>
+        <Canvas fx:id="canvas" width="1000" height="800" style="-fx-border-color: black;"/>
+    </HBox>
+    <!-- Menu Bar -->
+    <top>
+        <HBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="load image" />
+                        <MenuItem text="save image" />
+                </Menu>
+                <Menu text="Filters">
+                    <MenuItem text="negative" />
+                    <MenuItem text="Pixelizer" />
+                    <MenuItem text="identity" />
+                    <MenuItem text="treshold" />
+                    <MenuItem text="OldStyleFilter" />
+                    <MenuItem text="BW filter" />
+                    <MenuItem text="Vinette" />
+                    <MenuItem text="Colorizer" />
+                </Menu>
+            </MenuBar>
+            <Button text="About" onAction="#handleAbout" />
+            <Button text="Exit" onAction="#handleExit" HBox.hgrow="ALWAYS" />
+        </HBox>
+    </top>
+
+
+    <!-- Center Area -->
+    <center>
+        <Canvas fx:id="canvas" width="800" height="600" />
+    </center>
+
+    <!-- Right Sidebar -->
+    <right>
+        <VBox spacing="10" alignment="TOP_CENTER" style="-fx-padding: 10; ">
+    <!-- Existing elements -->
+            <Button text="Select Image File" fx:id="selectImageButton" />
+            <Button text="Edit Matrix" fx:id="editMatrixButton" />
+            <Rectangle width="100" height="100" fill="black" fx:id="previewBox" />
+            <Button text="Apply Matrix Filter" fx:id="applyMatrixButton" disable="true" />
+            <TextArea fx:id="logTextArea" prefHeight="100" wrapText="true" editable="false">
+                <text>Loaded filters.\nApplication started successfully.</text>
+            </TextArea>
+            <Button text="Generate Image" fx:id="generateImageButton" />
+            <Button text="Restore Original Image" fx:id="restoreImageButton" disable="true" />
+
+    <!-- Radio buttons for image selection -->
+
+            <RadioButton text="Original Image" toggleGroup="$imageToggleGroup" />
+            <RadioButton text="Modified Image" toggleGroup="$imageToggleGroup" selected="true" />
+
+    <!-- Color picker and canvas -->
+            <ColorPicker fx:id="colorPicker" onAction="#handleColorPicked" />
+            <Button text="Clear canvas" fx:id="clearCanvas" onAction="#handleClearCanvas"/>
+        </VBox>
+    </right>
+</BorderPane>

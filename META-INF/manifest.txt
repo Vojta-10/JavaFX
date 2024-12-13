@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: paintFX.App
+Class-Path: lib/javafx-sdk-20/lib/*

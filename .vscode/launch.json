@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "files.associations": {
+    "*.fxml": "xml"
+  },
+  "configurations": [
+    {
+      "type": "java",
+      "name": "App",
+      "request": "launch",
+      "mainClass": "paintFX.App",
+      "projectName": "JavaFX-main_82d376c7"
+    },
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}",
+      "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-23.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+    },
+    {
+      "type": "java",
+      "name": "App",
+      "request": "launch",
+      "mainClass": "paintFX.App",
+      "projectName": "Paint_5afac5fa",
+      "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-23.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+    }
+  ]
+}
